@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Residents</title>
+</head>
+
+<body class="h-screen overflow-hidden flex flex-col">
+
+    <header class="bg-[#0169A9] flex items-center justify-between p-2">
+
+        <button
+            id="menuButton"
+            class="lg:hidden p-2 rounded-lg hover:bg-[#00385A]"
+        >
+            <img
+                src="image/menu-bar.png"
+                alt="Menu"
+                class="w-8 h-8"
+            >
+        </button>
+
+        <div class="flex items-center">
+
+            <a href="index.html" class="flex items-center">
+
+                <img
+                    src="image/house-with-heart.png"
+                    alt="Logo"
+                    class="w-10 h-10"
+                >
+
+                <h1 class="text-white text-2xl font-bold p-3">
+                    Admin Panel
+                </h1>
+
+            </a>
+
+        </div>
+
+       <a href="settings.html" class="inline-block p-2 rounded-lg transition hover:bg-[#00385A]">
+            <img 
+                src="image/setting-removebg-preview.png" 
+                alt="Settings" 
+                class="w-8 h-8 transition hover:brightness-0 hover:invert"
+            >
+        </a>
+
+    </header>
+
+    <div class="flex flex-1 min-h-0">
+
+        <aside
+            id="sidebar"
+            class="hidden lg:block fixed lg:static left-0 top-0 z-50 w-64 h-full lg:h-auto bg-[#004A77] shadow-md p-3"
+        >
+
+             <div class="mt-4">
+
+                <button 
+                    id="closeButton" 
+                    class="lg:hidden absolute top-4 right-4 p-2 rounded-lg hover:bg-[#00385A]"
+                >
+                    <span class="text-white text-2xl">✕</span>
+                </button>
+
+                <h1 class="text-white text-2xl font-bold pr-12">
+                    Admin management
+                </h1>
+
+                <br>
+                <br>
+
+                <p class="text-[#57ADD4]">
+                    Management
+                </p>
+
+            </div>
+
+            <div class="mt-4">
+
+                <a href="index.html"
+                   class="flex items-center gap-3 px-6 rounded-lg bg-[#01426A]">
+
+                    <img
+                        src="image/home.png"
+                        alt="home"
+                        class="w-8 h-8"
+                    >
+
+                    <span class="text-white">
+                        Home
+                    </span>
+
+                </a>
+
+                <br>
+
+                <a href="Residents.html"
+                   class="flex items-center gap-3 px-6 rounded-lg bg-[#0989D9]">
+
+                    <img
+                        src="image/multiple-users-silhouette.png"
+                        alt="Residents"
+                        class="w-8 h-8"
+                    >
+
+                    <span class="text-white">
+                        Residents
+                    </span>
+
+                </a>
+
+                <br>
+
+                <a href="Queue.html"
+                   class="flex items-center gap-3 px-6 rounded-lg bg-[#01426A]">
+
+                    <img
+                        src="image/queue.png"
+                        alt="Queue"
+                        class="w-8 h-8"
+                    >
+
+                    <span class="text-white">
+                        Queue
+                    </span>
+
+                </a>
+
+                <br>
+
+                <a href="Rooms.html"
+                   class="flex items-center gap-3 px-6 rounded-lg bg-[#01426A]">
+
+                    <img
+                        src="image/round.png"
+                        alt="Rooms"
+                        class="w-8 h-8"
+                    >
+
+                    <span class="text-white">
+                        Rooms
+                    </span>
+
+                </a>
+
+            </div>
+
+            <div class="mt-32">
+
+                <a href="profile.html"
+                   class="flex items-center gap-3 px-6 rounded-lg bg-[#01426A] h-[50px]">
+
+                    <img
+                        src="image/man-empty-avatar-photo-placeholder-for-social-networks-resumes-forums-and-dating-sites-male-and-female-no-photo-images-for-unfilled-user-profile-free-vector.jpg"
+                        alt="Profile"
+                        class="w-8 h-8 rounded-full"
+                    >
+
+                    <span class="text-white">
+                        Profile
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <main class="flex-1 bg-gray-100 p-4 sm:p-6 lg:p-8 overflow-y-auto">
+
+            <div>
+
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
+                    Residents
+                </h2>
+
+                <p class="text-sm sm:text-base text-gray-500 mt-2">
+                    View registered residents
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
+
+                <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+
+                    <p class="text-sm sm:text-base text-gray-500">
+                        Total Residents
+                    </p>
+
+                    <h3
+                        id="totalResidents"
+                        class="text-3xl sm:text-4xl font-bold text-[#0169A9] mt-2">
+                        0
+                    </h3>
+
+                </div>
+
+
+                <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+
+                    <p class="text-sm sm:text-base text-gray-500">
+                        Active Residents
+                    </p>
+
+                    <h3
+                        id="activeResidents"
+                        class="text-3xl sm:text-4xl font-bold text-[#0169A9] mt-2">
+                        0
+                    </h3>
+
+                </div>
+
+
+                <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+
+                    <p class="text-sm sm:text-base text-gray-500">
+                        Available Rooms
+                    </p>
+
+                    <h3
+                        id="availableRooms"
+                        class="text-3xl sm:text-4xl font-bold text-[#0169A9] mt-2">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow mt-6 sm:mt-8 overflow-hidden">
+
+                <div class="p-4 sm:p-6 border-b">
+
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800">
+                        Resident List
+                    </h3>
+
+                    <p class="text-sm sm:text-base text-gray-500 mt-1">
+                        Registered residents will appear here.
+                    </p>
+
+                </div>
+
+
+
+                <div class="hidden md:block overflow-x-auto">
+
+                    <table class="w-full text-left">
+
+                        <thead class="bg-[#004A77] text-white">
+
+                            <tr>
+
+                                <th class="px-4 lg:px-6 py-3 lg:py-4">
+                                    Name
+                                </th>
+
+                                <th class="px-4 lg:px-6 py-3 lg:py-4">
+                                    Room
+                                </th>
+
+                                <th class="px-4 lg:px-6 py-3 lg:py-4">
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="residentList">
+
+                            <tr>
+
+                                <td
+                                    colspan="3"
+                                    class="px-4 lg:px-6 py-10 text-center text-gray-400">
+
+                                    No data available
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <div class="md:hidden p-4">
+
+                    <div
+                        class="flex flex-col gap-3">
+
+                        <div class="border rounded-lg p-4">
+
+                            <div class="flex justify-between items-start gap-4">
+
+                                <div class="min-w-0">
+
+                                    <p class="text-sm text-gray-500">
+                                        Name
+                                    </p>
+
+                                    <p class="font-semibold text-gray-800 truncate">
+                                        No data available
+                                    </p>
+
+                                </div>
+
+                                <span class="text-xs text-gray-400 whitespace-nowrap">
+                                    —
+                                </span>
+
+                            </div>
+
+
+                            <div class="grid grid-cols-2 gap-4 mt-4">
+
+                                <div>
+
+                                    <p class="text-sm text-gray-500">
+                                        Room
+                                    </p>
+
+                                    <p class="font-medium text-gray-800">
+                                        —
+                                    </p>
+
+                                </div>
+
+
+                                <div>
+
+                                    <p class="text-sm text-gray-500">
+                                        Status
+                                    </p>
+
+                                    <p class="font-medium text-gray-800">
+                                        —
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="Javascript/menu.js"></script>
+</body>
+</html>
