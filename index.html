@@ -187,6 +187,10 @@
 
     
 
-    <script src="Javascript/menu.js"></script>
+    <script src="Javascript/menu.js">
+        if (localStorage.getItem("loggedIn") !== "true") {
+                window.location.href = "Login.html";
+            }
+    </script>
 </body>
 </html>
